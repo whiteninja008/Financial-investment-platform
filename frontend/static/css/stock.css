@@ -1,0 +1,226 @@
+/* ─── Stock page layout ───────────────────────────────────────────────── */
+.stock-main { max-width: 1200px; margin: 0 auto; padding: 32px 24px 80px; }
+
+.loading-overlay {
+  position: fixed; inset: 0; z-index: 500;
+  background: var(--bg); display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 16px;
+  color: var(--text-2); font-size: 14px;
+}
+
+/* ─── Hero ────────────────────────────────────────────────────────────── */
+.stock-hero { margin-bottom: 32px; }
+
+.stock-identity {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.stock-ticker-badge {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: .2em;
+  color: var(--accent); background: var(--accent-dim);
+  padding: 3px 10px; border-radius: 4px; display: inline-block; margin-bottom: 6px;
+}
+.stock-name { font-size: 26px; font-weight: 700; line-height: 1.2; }
+.stock-sector { font-size: 13px; color: var(--text-3); margin-top: 4px; display: block; }
+
+.stock-price-block { text-align: right; }
+.stock-price { font-family: var(--font-mono); font-size: 32px; font-weight: 700; }
+.stock-change { font-family: var(--font-mono); font-size: 14px; margin-top: 4px; }
+
+/* ─── Verdict card ────────────────────────────────────────────────────── */
+.verdict-card {
+  background: var(--bg-2); border: 1px solid var(--border-2);
+  border-radius: var(--radius-lg); padding: 20px 24px; margin-bottom: 20px;
+  border-left: 3px solid var(--accent);
+}
+.verdict-label {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: .2em;
+  color: var(--text-3); margin-bottom: 6px;
+}
+.verdict-status { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
+.verdict-bullets { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.verdict-bullets li {
+  font-size: 13px; color: var(--text-2); padding-left: 16px; position: relative;
+}
+.verdict-bullets li::before {
+  content: '›'; position: absolute; left: 0; color: var(--accent);
+}
+
+/* ─── Key stats ───────────────────────────────────────────────────────── */
+.key-stats {
+  display: flex; flex-wrap: wrap; gap: 12px;
+}
+.stat-chip {
+  background: var(--bg-2); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 10px 16px;
+  display: flex; flex-direction: column; gap: 3px; min-width: 110px;
+}
+.stat-key {
+  font-family: var(--font-mono); font-size: 9px; letter-spacing: .15em;
+  color: var(--text-2); text-transform: uppercase;
+}
+.stat-val { font-family: var(--font-mono); font-size: 14px; font-weight: 600; color: var(--text); }
+
+/* ─── Period bar ──────────────────────────────────────────────────────── */
+.period-bar {
+  display: flex; align-items: center; gap: 6px; margin-bottom: 20px;
+}
+.period-label { font-size: 12px; color: var(--text-3); margin-right: 4px; }
+.period-btn {
+  padding: 5px 14px; border-radius: var(--radius);
+  background: transparent; border: 1px solid var(--border);
+  color: var(--text-3); font-size: 12px; font-family: var(--font-mono);
+  cursor: pointer; transition: all .15s;
+}
+.period-btn:hover { border-color: var(--accent); color: var(--accent); }
+.period-btn.active {
+  background: var(--accent); border-color: var(--accent); color: #000; font-weight: 700;
+}
+
+/* ─── Charts ──────────────────────────────────────────────────────────── */
+.chart-section {
+  background: var(--bg-1); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 20px 20px 16px;
+  margin-bottom: 16px;
+}
+.chart-section.half { flex: 1; min-width: 0; }
+
+.indicators-row { display: flex; gap: 16px; margin-bottom: 16px; }
+
+.chart-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.chart-title { font-size: 13px; font-weight: 600; letter-spacing: .04em; color: var(--text-2); }
+.chart-legend { display: flex; gap: 14px; }
+.legend-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--text-3); }
+.leg-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+.chart-wrap { position: relative; height: 320px; }
+.chart-wrap.small { height: 160px; }
+
+/* ─── Section cards ───────────────────────────────────────────────────── */
+.section-card {
+  background: var(--bg-1); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 24px;
+  margin-bottom: 16px;
+}
+.card-title {
+  font-size: 14px; font-weight: 600; color: var(--text-2);
+  margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border);
+  letter-spacing: .04em;
+}
+
+/* ─── Trend grid ──────────────────────────────────────────────────────── */
+.trend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+.trend-item { position: relative;
+  background: var(--bg-2); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 14px;
+}
+.trend-key {
+  font-family: var(--font-mono); font-size: 10px; color: var(--text-2);
+  margin-bottom: 6px; display: flex; align-items: center; gap: 5px;
+}
+.trend-val { font-family: var(--font-mono); font-size: 15px; font-weight: 600; color: var(--text); }
+.trend-label-badge {
+  display: inline-block; margin-top: 6px; padding: 3px 10px;
+  border-radius: 20px; font-size: 11px; font-weight: 700;
+  font-family: var(--font-mono);
+}
+
+/* ─── Financial metrics ───────────────────────────────────────────────── */
+.metrics-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.metric-card { position: relative;
+  background: var(--bg-2); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 14px;
+}
+.metric-name { font-size: 12px; font-weight: 600; margin-bottom: 4px; }
+.metric-val {
+  font-family: var(--font-mono); font-size: 18px; font-weight: 700;
+  color: var(--accent); margin-bottom: 8px;
+}
+.metric-desc { font-size: 11px; color: var(--text-3); line-height: 1.5; }
+.metric-sentiment { font-size: 11px; font-weight: 600; margin-top: 6px; }
+
+/* ─── Sector ──────────────────────────────────────────────────────────── */
+.sector-block { display: flex; align-items: center; gap: 24px; }
+.sector-name { font-family: var(--font-mono); font-size: 14px; }
+.sector-perf { font-family: var(--font-mono); font-size: 22px; font-weight: 700; }
+
+/* ─── Supply chain ────────────────────────────────────────────────────── */
+.supply-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.supply-group { }
+.supply-group-label {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: .15em;
+  color: var(--text-3); margin-bottom: 10px; text-transform: uppercase;
+}
+.supply-tickers { display: flex; flex-wrap: wrap; gap: 8px; }
+.supply-ticker {
+  padding: 5px 12px; border-radius: var(--radius);
+  border: 1px solid var(--border-2); background: var(--bg-2);
+  font-family: var(--font-mono); font-size: 12px; color: var(--text-2);
+  cursor: pointer; text-decoration: none; transition: all .15s; display: block;
+}
+.supply-ticker:hover { border-color: var(--accent); color: var(--accent); }
+.supply-empty { color: var(--text-3); font-size: 12px; }
+
+/* ─── News ────────────────────────────────────────────────────────────── */
+.news-grid { display: flex; flex-direction: column; gap: 10px; }
+.news-item {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 12px; background: var(--bg-2); border: 1px solid var(--border);
+  border-radius: var(--radius); transition: border-color .15s;
+}
+.news-item:hover { border-color: var(--border-2); }
+.news-sentiment-dot {
+  width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 5px;
+}
+.news-body { flex: 1; }
+.news-headline {
+  font-size: 13px; font-weight: 500; margin-bottom: 4px;
+  color: var(--text); text-decoration: none; display: block;
+}
+.news-headline:hover { color: var(--accent); }
+.news-meta { font-size: 11px; color: var(--text-3); display: flex; gap: 10px; }
+.news-score { font-family: var(--font-mono); font-size: 11px; }
+
+/* ─── Top search ──────────────────────────────────────────────────────── */
+.ticker-search-wrap { display: flex; gap: 6px; align-items: center; margin-left: 24px; }
+.top-search {
+  padding: 6px 12px; background: var(--bg-2); border: 1px solid var(--border-2);
+  border-radius: var(--radius); color: var(--text); font-size: 13px;
+  font-family: var(--font-mono); outline: none; text-transform: uppercase; width: 120px;
+}
+.top-search:focus { border-color: var(--accent); }
+
+/* ─── Info tooltips ───────────────────────────────────────────────────── */
+.info-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--bg-3); border: 1px solid var(--border-2);
+  color: var(--text-3); font-size: 9px; font-style: normal;
+  cursor: help; position: relative; flex-shrink: 0;
+  font-family: var(--font-body); font-weight: 700;
+  transition: border-color .15s, color .15s;
+}
+.info-icon:hover { border-color: var(--accent); color: var(--accent); }
+.info-icon .tooltip {
+  display: none; position: absolute; bottom: calc(100% + 8px); left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-3); border: 1px solid var(--border-2);
+  border-radius: var(--radius); padding: 10px 12px;
+  width: 220px; font-size: 11px; color: var(--text-2);
+  line-height: 1.5; z-index: 999; pointer-events: none;
+  box-shadow: 0 8px 24px rgba(0,0,0,.4);
+  white-space: normal; text-align: left;
+  font-family: var(--font-body); font-weight: 400; letter-spacing: 0;
+}
+.info-icon .tooltip::after {
+  content: ''; position: absolute; top: 100%; left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent; border-top-color: var(--border-2);
+}
+.info-icon:hover .tooltip { display: block; }
+
+/* Tooltip overflow fix — pop out of clipping card context */
+.trend-item, .metric-card { overflow: visible; }
+.metrics-grid, .trend-grid { overflow: visible; }
+.section-card { overflow: visible; }
